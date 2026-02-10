@@ -1,0 +1,15 @@
+# Cloud Run service definition
+# This deploys the agent runtime as a managed, scalable service.
+
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: agentic-ai-rd
+spec:
+  template:
+    spec:
+      containers:
+        - image: gcr.io/PROJECT_ID/agentic-ai-rd
+          env:
+            - name: LOG_LEVEL
+              value: INFO
