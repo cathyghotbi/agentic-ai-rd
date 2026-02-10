@@ -65,7 +65,7 @@ INFO:root:tool_call
 
 ## Example Test Run Output
 
-```json
+```bash
 {
 PS C:\Users\Cathy\PycharmProjects\pythonProject1\agent-platform> python -m pytest -s
 ============================================================================================ test session starts =============================================================================================
