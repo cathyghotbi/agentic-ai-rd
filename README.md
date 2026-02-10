@@ -1,4 +1,4 @@
-<img width="313" height="192" alt="{3F365DBF-7A64-4AC7-B111-28CEBA684978}" src="https://github.com/user-attachments/assets/fbacc0a5-4e86-4db5-8e1b-9a1f9591cd6d" />
+
 ## Agentic AI Platform for Scientific R&D
 This project demonstrates how agentic AI can be deployed as a reliable, 
 auditable platform for scientific R&D, inspired by real drug discovery workflows.
@@ -43,7 +43,7 @@ Below is the actual output produced by running the agent workflow locally
 using a mock protein target (`TP53`).
 The system produces structured JSON outputs, which can be stored, versioned, audited, or consumed by downstream systems.
 
-```json
+```bash
 PS C:\Users\Cathy\PycharmProjects\pythonProject1\agent-platform> python run.py
 
 [HITL] Approve step 'literature_review'? (y/n): y
@@ -52,6 +52,7 @@ INFO:root:tool_call
 INFO:root:tool_call
 INFO:root:tool_call
 [HITL] Approve step 'reporting'? (y/n): y
+
 
 === FINAL REPORT ===
 {
