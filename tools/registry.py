@@ -13,6 +13,7 @@ from tools.bio_tools import (
     fetch_target_metadata,
     run_sequence_qc,
     predict_structure,
+    calculate_molecular_weight,
 )
 from tools.logging import log_tool_call
 
@@ -24,6 +25,7 @@ class ToolRegistry:
             "fetch_target_metadata": fetch_target_metadata,
             "run_sequence_qc": run_sequence_qc,
             "predict_structure": predict_structure,
+            "calculate_molecular_weight": calculate_molecular_weight,
         }
 
     def execute(self, tool_name: str, params: dict) -> dict:
