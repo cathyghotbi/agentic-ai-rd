@@ -1,3 +1,5 @@
+from Bio.SeqUtils import molecular_weight # PS C:\\Users\\Cathy\\PycharmProjects\\pythonProject1> pip install biopython
+
 """
 Mock bioinformatics tools.
 
@@ -12,7 +14,7 @@ def fetch_target_metadata(target: str) -> dict:
     """
     return {
         "target": target,
-        "sequence": "MEEPQSDPSVEPPLSQETFSDLWKLLPEN",
+        "sequence": "MEEPQSDPSVEPPLSQETFSDLWKLLPEN", # (29 amino acids — shortened mock version of p53)
         "source": "MockDB",
     }
 
@@ -26,7 +28,6 @@ def run_sequence_qc(sequence: str) -> dict:
         "length": len(sequence),
     }
 
-
 def predict_structure(sequence: str) -> dict:
     """
     Simulate protein structure prediction.
@@ -35,3 +36,29 @@ def predict_structure(sequence: str) -> dict:
         "model": "MockFold",
         "confidence": 0.87,
     }
+
+def calculate_molecular_weight(sequence: str) -> dict:
+    """
+    Calculate real molecular weight of a protein sequence.
+
+    Uses BioPython's molecular_weight function.
+    """
+    mw = molecular_weight(sequence, seq_type='protein')
+    return {
+        "molecular_weight": mw,
+        "unit": "Da"
+    }
+
+
+# def calculate_molecular_weight(sequence: str) -> dict:
+#     """
+#     Simulate molecular weight calculation.
+#
+#     Rough approximation:
+#     average amino acid ≈ 110 Da
+#     """
+#     return {
+#         "molecular_weight": len(sequence) * 110,
+#         "unit": "Da",
+#     }
+
