@@ -98,3 +98,53 @@ PS C:\Users\Cathy\PycharmProjects\pythonProject1\agent-platform>
 <img width="751" height="272" alt="{2A091E0D-B997-436A-8ED6-982D1E168A45}" src="https://github.com/user-attachments/assets/66bc711d-4b16-4074-82cf-0228d081880e" />
 
 
+
+## Using real molecular weight
+We start with a simple function calculate_molecular_weight in bio_tools,
+in which we assue average amino acid ≈ 110 Da,
+
+```bash
+"molecular_weight": len(sequence) * 110,
+```
+
+The result will be:  29*110 = 3190
+
+```bash
+=== FINAL REPORT ===
+{
+  "target": "TP53",
+  "summary": "Automated discovery report",
+  "qc_status": "PASS",
+  "structure_confidence": 0.87,
+  "molecular_weight": 3190
+}
+```
+
+<img width="486" height="119" alt="{3C6350A2-C762-42E2-ACFE-048D6D6C2BE3}" src="https://github.com/user-attachments/assets/51559110-5d51-42d2-b269-65fa989f0cb5" />
+
+
+To use the real molecular weight, requires BioPython: pip install biopython (install in PycCharm Terminal)
+By using the real calculation of molecular weight from Bio.SeqUtils,
+
+```bash
+mw = molecular_weight(sequence, seq_type='protein')
+```
+the result will be:
+
+```bash
+=== FINAL REPORT ===
+{
+  "target": "TP53",
+  "summary": "Automated discovery report",
+  "qc_status": "PASS",
+  "structure_confidence": 0.87,
+  "molecular_weight": 3343.623600000001
+}
+```
+
+<img width="336" height="120" alt="{5D3BB9EA-6804-4594-A349-1BE3B47378E9}" src="https://github.com/user-attachments/assets/f8388f4b-9076-4af5-940c-92bca5c7c320" />
+
+
+
+
+
