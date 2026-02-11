@@ -16,6 +16,7 @@ def reporting_agent(context: dict) -> dict:
         "summary": "Automated discovery report",
         "qc_status": context["analysis"]["qc"]["status"],
         "structure_confidence": context["analysis"]["structure"]["confidence"],
+        "molecular_weight": context["analysis"]["molecular_weight"]["molecular_weight"],
     }
 
     # Store final output in context
